@@ -59,7 +59,7 @@ public class P126WordLadderIi{
         solution.findLadders(beginWord,endWord,wordList);
     }
 //leetcode submit region begin(Prohibit modification and deletion)
-//    思路说明：在到达最短路径所在的层时，记录并输出所有符合条件的路径。
+//思路说明：在到达最短路径所在的层时，记录并输出所有符合条件的路径。
 //
 //    1.在单词接龙的基础上，需要将找到的最短路径存储下来；
 //    2.之前的队列只用来存储每层的元素，那么现在就得存储每层添加元素之后的结果："ab","if",{"cd","af","ib","if"}；
@@ -68,7 +68,9 @@ public class P126WordLadderIi{
 //              （3）第三层：{"ab","af","if"}、{"ab","ib","if"}
 //    3.如果该层添加的某一个单词符合目标单词，则该路径为最短路径，该层为最短路径所在的层，但此时不能直接返回结果，必须将该层遍历完，将该层所有符合的结果都添加进结果集；
 //    4.每层添加单词的时候，不能直接添加到总的已访问单词集合中，需要每层有一个单独的该层访问的单词集，该层结束之后，再会合到总的已访问单词集合中，原因就是因为3.
-
+//注意点：
+//    1.queue中存储的是到达该单词的路径
+//    2.需要额外使用一个subvisited记录当前层访问过的单词，该层访问结束后，将其加入到visited中
 class Solution {
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
         Set<String> wordSet = new HashSet<>(wordList);
