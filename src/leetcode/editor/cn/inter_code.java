@@ -3,7 +3,7 @@ package leetcode.editor.cn;
 public class inter_code {
     public static void main(String[] args) {
         Solution solution = new inter_code().new Solution();
-        int ans = solution.solve(2,2);
+        int ans = solution.solve("0001111000000011111");
         System.out.println(ans);
     }
 
@@ -65,37 +65,50 @@ public class inter_code {
 //        假如手势中有两个点是顺序经过的，那么这两个点的手势轨迹之间是绝对不能跨过任何未被经过的点。
 //        经过点的顺序不同则表示为不同的解锁手势
         // 1 1 / 9
-        public int solve(int m, int n){
-            int[][] jumps = new int[10][10]; //利用一个数组记录两点间的跳跃点
-            jumps[1][3] = jumps[3][1] = 2;
-            jumps[4][6] = jumps[6][4] = 5;
-            jumps[7][9] = jumps[9][7] = 8;
-            jumps[1][7] = jumps[7][1] = 4;
-            jumps[2][8] = jumps[8][2] = 5;
-            jumps[3][9] = jumps[9][3] = 6;
-            jumps[1][9] = jumps[9][1] = jumps[3][7] = jumps[7][3] = 5;
-
-            boolean[] visited = new boolean[10];
-            int ans = 0; //满足条件的方案数
-            ans += find(1,0,1,m,n,jumps,visited) * 4;
-            ans += find(2,0,1,m,n,jumps,visited) * 4;
-            ans += find(5,0,1,m,n,jumps,visited) * 1;
-            return ans;
-        }
-        public int find(int i, int ans, int step, int m, int n, int[][] jumps, boolean[] visited){
-
-            if(step == n){
-                ans ++;
-                return ans;
+//        public int solve(int m, int n){
+//            int[][] jumps = new int[10][10]; //利用一个数组记录两点间的跳跃点
+//            jumps[1][3] = jumps[3][1] = 2;
+//            jumps[4][6] = jumps[6][4] = 5;
+//            jumps[7][9] = jumps[9][7] = 8;
+//            jumps[1][7] = jumps[7][1] = 4;
+//            jumps[2][8] = jumps[8][2] = 5;
+//            jumps[3][9] = jumps[9][3] = 6;
+//            jumps[1][9] = jumps[9][1] = jumps[3][7] = jumps[7][3] = 5;
+//
+//            boolean[] visited = new boolean[10];
+//            int ans = 0; //满足条件的方案数
+//            ans += find(1,0,1,m,n,jumps,visited) * 4;
+//            ans += find(2,0,1,m,n,jumps,visited) * 4;
+//            ans += find(5,0,1,m,n,jumps,visited) * 1;
+//            return ans;
+//        }
+//        public int find(int i, int ans, int step, int m, int n, int[][] jumps, boolean[] visited){
+//
+//            if(step == n){
+//                ans ++;
+//                return ans;
+//            }
+//            if(step >= m) ans++;
+//            visited[i] = true;
+//            for (int next = 1; next < 10; next++) {
+//                if(!visited[next] && (jumps[i][next] == 0 || visited[jumps[i][next]]))
+//                    ans = find(next,ans,step+1,m,n,jumps,visited);
+//            }
+//            visited[i] = false;
+//            return ans;
+//        }
+        public int solve(String str){
+            char[] chars = str.toCharArray();
+            int max = 0;
+            int tempmax = 0;
+            for(int i = 0; i < chars.length; i++){
+                if(i == 0) tempmax = chars[i]=='1'? 1:0;
+                else if(chars[i] == '1' && chars[i-1] == '1') tempmax += 1;
+                else if(chars[i] == '1' && chars[i-1] == '0') tempmax=1;
+                else if(chars[i] == '0' && chars[i-1] == '1') max = Math.max(max,tempmax);
+                else continue;
             }
-            if(step >= m) ans++;
-            visited[i] = true;
-            for (int next = 1; next < 10; next++) {
-                if(!visited[next] && (jumps[i][next] == 0 || visited[jumps[i][next]]))
-                    ans = find(next,ans,step+1,m,n,jumps,visited);
-            }
-            visited[i] = false;
-            return ans;
+            return Math.max(max,tempmax);
         }
     }
 }
