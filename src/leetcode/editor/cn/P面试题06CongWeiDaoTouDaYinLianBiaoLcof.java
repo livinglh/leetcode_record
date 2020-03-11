@@ -24,6 +24,11 @@ public class P面试题06CongWeiDaoTouDaYinLianBiaoLcof{
     public static void main(String[] args) {
         Solution solution = new P面试题06CongWeiDaoTouDaYinLianBiaoLcof().new Solution();
     }
+    public class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+    }
     //leetcode submit region begin(Prohibit modification and deletion)
 /**
  * Definition for singly-linked list.
