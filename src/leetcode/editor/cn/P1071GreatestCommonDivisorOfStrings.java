@@ -35,24 +35,27 @@
 
   
 package leetcode.editor.cn;
+
+import java.util.Arrays;
+import java.util.Map;
+
 //java:字符串的最大公因子
 public class P1071GreatestCommonDivisorOfStrings{
     public static void main(String[] args) {
         Solution solution = new P1071GreatestCommonDivisorOfStrings().new Solution();
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String gcdOfStrings(String str1, String str2) {
-//        if(str1.length() % 2 != 0) return "";
-        if (!(str1 + str2).equals(str2 + str1)) {
-            return "";
+    class Solution {
+        public String gcdOfStrings(String str1, String str2) {
+            if (!(str1 + str2).equals(str2 + str1)) {
+                return "";
+            }
+            return str1.substring(0, gcd(str1.length(), str2.length()));
         }
-        return str1.substring(0, gcd(str1.length(), str2.length()));
+        public int gcd(int a, int b){
+            return a % b == 0 ? b : gcd(b,a%b);
+        }
     }
-    public int gcd(int a, int b){
-        return a % b == 0 ? b : gcd(b,a%b);
-    }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
