@@ -63,7 +63,7 @@ public class P面试题07ZhongJianErChaShuLcof{
                 map.put(inorder[i], i);
             }
             this.preorder = preorder;
-            return build(0,preorder.length-1,0,inorder.length);
+            return build(0,preorder.length-1,0,inorder.length-1);
         }
 
         public TreeNode build(int prel, int prer, int inl, int inr){

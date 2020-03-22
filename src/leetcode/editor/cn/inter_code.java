@@ -97,6 +97,7 @@ public class inter_code {
 //            visited[i] = false;
 //            return ans;
 //        }
+        // 连续1的个数
         public int solve(String str){
             char[] chars = str.toCharArray();
             int max = 0;
