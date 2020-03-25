@@ -1,8 +1,17 @@
 # leetcode_record
 
+| Title-Link                                                   | Title-Link | Method | Note |
+| ------------------------------------------------------------ | ---------- | ------ | ---- |
+| [试一试](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P1013PartitionArrayIntoThreePartsWithEqualSum.java) |            |        |      |
+|                                                              |            |        |      |
+|                                                              |            |        |      |
+
+
+
 ---
 ## 数组：
 10_01 121 122 1013 1 2 3 4 15 
+
 - 15 三数之和 排序 双指针
 - 169 多数元素 哈希表
 - 300 最长上升子序列 动态规划
