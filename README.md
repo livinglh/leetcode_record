@@ -112,6 +112,7 @@
 
 | Title-Link                                                   | Describe                                   | Method                                       | Note |
 | ------------------------------------------------------------ | ------------------------------------------ | -------------------------------------------- | ---- |
+| [39 数组中出现次数超过一半的数字](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题39ShuZuZhongChuXianCiShuChaoGuoYiBanDeShuZiLcof.java) | 数组中出现次数超过一半的数字               | 排序，取中间 摩尔投票法                      |      |
 | [40 最小的k个数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题40ZuiXiaoDeKgeShuLcof.java) | 获得数组中最小的k个数                      | 快排 大根堆 二叉搜索树                       |      |
 | [41 数据流中的中位数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题41ShuJuLiuZhongDeZhongWeiShuLcof.java) | 设计一个支持以下添加和返回中位数的数据结构 | 动态维护一个大根堆和小根堆 二分查找+插入排序 |      |
 | [42 连续子数组的最大和](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题42LianXuZiShuZuDeZuiDaHeLcof.java) | 连续子数组的最大和                         | 动态规划                                     |      |
