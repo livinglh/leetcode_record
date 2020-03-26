@@ -1,13 +1,5 @@
 # leetcode_record
 
-| Title-Link                                                   | Title-Link | Method | Note |
-| ------------------------------------------------------------ | ---------- | ------ | ---- |
-| [试一试](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P1013PartitionArrayIntoThreePartsWithEqualSum.java) |            |        |      |
-|                                                              |            |        |      |
-|                                                              |            |        |      |
-
-
-
 ---
 ## 数组：
 10_01 121 122 1013 1 2 3 4 15 
@@ -105,3 +97,22 @@
 - 37 序列化二叉树 DFS BFS
 - 38 字符串的排列 全排列 递归
 - 40 最小的k个数 快排 堆
+
+
+
+## 剑指_2_table1 
+
+| Title-Link                                                   | Describe              | Method                 | Note |
+| ------------------------------------------------------------ | --------------------- | ---------------------- | ---- |
+| [40 最小的k个数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题40ZuiXiaoDeKgeShuLcof.java) | 获得数组中最小的k个数 | 快排 大根堆 二叉搜索树 |      |
+|                                                              |                       |                        |      |
+|                                                              |                       |                        |      |
+
+## 剑指_2_table2
+
+| Title-Link                                                   | Describe                                   | Method                                       | Note |
+| ------------------------------------------------------------ | ------------------------------------------ | -------------------------------------------- | ---- |
+| [40 最小的k个数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题40ZuiXiaoDeKgeShuLcof.java) | 获得数组中最小的k个数                      | 快排 大根堆 二叉搜索树                       |      |
+| [41 数据流中的中位数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题41ShuJuLiuZhongDeZhongWeiShuLcof.java) | 设计一个支持以下添加和返回中位数的数据结构 | 动态维护一个大根堆和小根堆 二分查找+插入排序 |      |
+| [42 连续子数组的最大和](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题42LianXuZiShuZuDeZuiDaHeLcof.java) | 连续子数组的最大和                         | 动态规划                                     |      |
+
