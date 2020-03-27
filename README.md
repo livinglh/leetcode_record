@@ -18,7 +18,8 @@
 ## 栈
 - 有效的括号 栈
 ---
-##字符串：
+## 字符串：
+
 - 1071 字符串的最大公因子 辗转相除 
 - 5 最长回文子串 中心扩展法 动态规划
 - 01_06 字符串压缩 模拟过程 双指针
@@ -102,10 +103,15 @@
 
 ## 剑指_2
 
-| Title-Link                                                   | Describe                                   | Method                                       | Note |
-| ------------------------------------------------------------ | ------------------------------------------ | -------------------------------------------- | ---- |
-| [39 数组中出现次数超过一半的数字](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题39ShuZuZhongChuXianCiShuChaoGuoYiBanDeShuZiLcof.java) | 数组中出现次数超过一半的数字               | 排序，取中间 摩尔投票法                      |      |
-| [40 最小的k个数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题40ZuiXiaoDeKgeShuLcof.java) | 获得数组中最小的k个数                      | 快排 大根堆 二叉搜索树                       |      |
-| [41 数据流中的中位数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题41ShuJuLiuZhongDeZhongWeiShuLcof.java) | 设计一个支持以下添加和返回中位数的数据结构 | 动态维护一个大根堆和小根堆 二分查找+插入排序 |      |
-| [42 连续子数组的最大和](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题42LianXuZiShuZuDeZuiDaHeLcof.java) | 连续子数组的最大和                         | 动态规划                                     |      |
+| Title-Link                                                   | Describe                                                     | Method                                       | Note |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------------- | ---- |
+| [39 数组中出现次数超过一半的数字](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题39ShuZuZhongChuXianCiShuChaoGuoYiBanDeShuZiLcof.java) | 数组中出现次数超过一半的数字                                 | 排序，取中间 摩尔投票法                      |      |
+| [40 最小的k个数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题40ZuiXiaoDeKgeShuLcof.java) | 获得数组中最小的k个数                                        | 快排 大根堆 二叉搜索树                       |      |
+| [41 数据流中的中位数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题41ShuJuLiuZhongDeZhongWeiShuLcof.java) | 设计一个支持以下添加和返回中位数的数据结构                   | 动态维护一个大根堆和小根堆 二分查找+插入排序 |      |
+| [42 连续子数组的最大和](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题42LianXuZiShuZuDeZuiDaHeLcof.java) | 连续子数组的最大和                                           | 动态规划                                     |      |
+| [43 1～n整数中1出现的次数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题43OneNzhengShuZhong1chuXianDeCiShuLcof.java) | 输入12，1～12这些整数中包含1 的数字有1、10、11和12，1一共出现了5次 | 数学 递归                                    |      |
+| [44 数字序列中某一位的数字](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题44ShuZiXuLieZhongMouYiWeiDeShuZiLcof.java) | 以0123456789101112131415…的格式序列化，求任意第n位对应的数字 | 数学                                         |      |
+| [45 把数组排成最小的数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题45BaShuZuPaiChengZuiXiaoDeShuLcof.java) | 拼接数组中的数字，取最小                                     | 字符串数组排序                               |      |
+| [46 把数字翻译成字符串](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题46BaShuZiFanYiChengZiFuChuanLcof.java) | 给定映射关系，计算一个数字有多少种不同的翻译方法             | 动态规划                                     |      |
+| [47 礼物的最大价值](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题47LiWuDeZuiDaJieZhiLcof.java) | 二维数组，向右向下，求路径和最大值                           | 动态规划 递归                                |      |
 
