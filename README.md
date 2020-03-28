@@ -99,7 +99,11 @@
 - 38 字符串的排列 全排列 递归
 - 40 最小的k个数 快排 堆
 
+## leetcode
 
+| Title-Link                                                   | Describe                 | Method                       | Note |
+| ------------------------------------------------------------ | ------------------------ | ---------------------------- | ---- |
+| [820 单词的压缩编码](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P820ShortEncodingOfWords.java) | 对有公共后缀的字符串合并 | 字典树（后缀版） Hashset去重 |      |
 
 ## 剑指_2
 
@@ -114,4 +118,9 @@
 | [45 把数组排成最小的数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题45BaShuZuPaiChengZuiXiaoDeShuLcof.java) | 拼接数组中的数字，取最小                                     | 字符串数组排序                               |      |
 | [46 把数字翻译成字符串](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题46BaShuZiFanYiChengZiFuChuanLcof.java) | 给定映射关系，计算一个数字有多少种不同的翻译方法             | 动态规划                                     |      |
 | [47 礼物的最大价值](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题47LiWuDeZuiDaJieZhiLcof.java) | 二维数组，向右向下，求路径和最大值                           | 动态规划 递归                                |      |
+| [48 最长不重复子字符串](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题48ZuiChangBuHanZhongFuZiFuDeZiZiFuChuanLcof.java) | 从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度 | 滑动窗口（双指针） 动态规划                  |      |
+| [49 丑数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题49ChouShuLcof.java) | 包含因子 2、3 和 5 的数称作丑数（Ugly Number），求从小到大的的第 n 个丑数 | 动态规划                                     |      |
+| [50 第一次只出现一次的字符](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题50DiYiGeZhiChuXianYiCiDeZiFuLcof.java) | 字符串中第一次只出现一次的字符                               | 哈希表                                       |      |
+
+
 

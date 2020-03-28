@@ -53,16 +53,38 @@ class Solution {
 //        }
 //        return ans;
         //2.使用HashMap
-        int n = s.length(),ans = 0;
-        Map<Character,Integer> map = new HashMap<>();
-        for (int j = 0,i = 0; j < n; j++) {
-            if(map.containsKey(s.charAt(j))){
-                i = Math.max(map.get(s.charAt(j)),i);
+//        int n = s.length(),ans = 0;
+//        Map<Character,Integer> map = new HashMap<>();
+//        for (int j = 0,i = 0; j < n; j++) {
+//            if(map.containsKey(s.charAt(j))){
+//                i = Math.max(map.get(s.charAt(j)),i);
+//            }
+//            map.put(s.charAt(j),j+1);
+//            ans = Math.max(ans,j-i+1);
+//        }
+//        return ans;
+        //3. 动态规划
+        if(s.equals("")) return 0;
+        int len = s.length();
+        //dp(i)为以第i个字符为结尾的不包含重复字符的子字符串的最长长度
+        int[] dp = new int[len];
+        dp[0] = 1;
+        for(int i = 1;i < len;i++){
+            char cur = s.charAt(i);
+            String subStr = s.substring(0,i);
+            if(!subStr.contains(cur+"")){
+                dp[i] = dp[i-1] + 1;
+            }else{
+                int d = subStr.length() - subStr.lastIndexOf(cur) ;//距离
+                if(d <= dp[i -1]) dp[i] = d;
+                else dp[i] = dp[i - 1] + 1;
             }
-            map.put(s.charAt(j),j+1);
-            ans = Math.max(ans,j-i+1);
         }
-        return ans;
+        int max = 0;
+        for(int i : dp){
+            max = Math.max(max,i);
+        }
+        return max;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
