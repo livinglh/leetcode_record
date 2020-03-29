@@ -101,9 +101,10 @@
 
 ## leetcode
 
-| Title-Link                                                   | Describe                 | Method                       | Note |
-| ------------------------------------------------------------ | ------------------------ | ---------------------------- | ---- |
-| [820 单词的压缩编码](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P820ShortEncodingOfWords.java) | 对有公共后缀的字符串合并 | 字典树（后缀版） Hashset去重 |      |
+| Title-Link                                                   | Describe                                                     | Method                       | Note |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---------------------------- | ---- |
+| [820 单词的压缩编码](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P820ShortEncodingOfWords.java) | 对有公共后缀的字符串合并                                     | 字典树（后缀版） Hashset去重 |      |
+| [1162 地图分析](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P1162AsFarFromLandAsPossible.java) | 二维数组，0为海洋，1为陆地，寻找距离陆地最远的海洋，返回最远距离 | BFS，多源BFS                 |      |
 
 ## 剑指_2
 
@@ -119,8 +120,13 @@
 | [46 把数字翻译成字符串](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题46BaShuZiFanYiChengZiFuChuanLcof.java) | 给定映射关系，计算一个数字有多少种不同的翻译方法             | 动态规划                                     |      |
 | [47 礼物的最大价值](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题47LiWuDeZuiDaJieZhiLcof.java) | 二维数组，向右向下，求路径和最大值                           | 动态规划 递归                                |      |
 | [48 最长不重复子字符串](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题48ZuiChangBuHanZhongFuZiFuDeZiZiFuChuanLcof.java) | 从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度 | 滑动窗口（双指针） 动态规划                  |      |
-| [49 丑数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题49ChouShuLcof.java) | 包含因子 2、3 和 5 的数称作丑数（Ugly Number），求从小到大的的第 n 个丑数 | 动态规划                                     |      |
+| [49 丑数](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题49ChouShuLcof.java) | 包含因子 2、3 和 5 的数称作丑数（Ugly Number），求从小到大的的第 n 个丑数 | 动态规划  Treeset                            |      |
 | [50 第一次只出现一次的字符](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题50DiYiGeZhiChuXianYiCiDeZiFuLcof.java) | 字符串中第一次只出现一次的字符                               | 哈希表                                       |      |
+| [51 数组中的逆序对](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题51ShuZuZhongDeNiXuDuiLcof.java) | 数组中逆序对的数量                                           | 归并排序                                     |      |
+| [52 两个链表的第一个公共节点](P面试题52LiangGeLianBiaoDeDiYiGeGongGongJieDianLcof.java) | 两个链表的第一个公共节点                                     | 链表基本操作                                 |      |
+| [53I 排序数组中查找数字](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题53IZaiPaiXuShuZuZhongChaZhaoShuZiLcof.java) | 排序数组中查找数字                                           | 二分查找（左右边界）                         |      |
+| [53II 0～n-1中缺失的数字](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题53IIQueShiDeShuZiLcof.java) | 0～n-1中缺失的数字                                           | 二分查找（右边界）                           |      |
+| [54 二叉搜索树的第k大节点](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P面试题54ErChaSouSuoShuDeDiKdaJieDianLcof.java) | 二叉搜索树的第k大节点                                        | 中序遍历改                                   |      |
 
 
 
