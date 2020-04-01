@@ -27,9 +27,6 @@
   
 package leetcode.editor.cn;
 
-import java.util.ArrayList;
-import java.util.List;
-
 //java:滑动窗口的最大值
 public class P面试题59IHuaDongChuangKouDeZuiDaZhiLcof{
     public static void main(String[] args) {

@@ -27,6 +27,10 @@
 
   
 package leetcode.editor.cn;
+
+import java.util.ArrayList;
+import java.util.List;
+
 //java:n个骰子的点数
 public class P面试题60NgeTouZiDeDianShuLcof{
     public static void main(String[] args) {
@@ -35,7 +39,27 @@ public class P面试题60NgeTouZiDeDianShuLcof{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public double[] twoSum(int n) {
+        int[][] dp = new int[n+1][n*6+1];
+        for (int i = 1; i <= 6; i++) {
+            dp[1][i] = 1;
+        }
 
+        for (int i = 2; i <= n; i++){
+            for(int j = i; j <= 6 * i; j++){
+                for (int k = 1; k <= 6; k++) {
+                    if(j-k<=0) break;
+                    dp[i][j] += dp[i-1][j-k];
+                }
+            }
+        }
+
+        double all = Math.pow(6,n);
+        double[] res = new double[6*n - n + 1];
+        int index = 0;
+        for (int i = n; i <= 6*n; i++) {
+            res[index++] = dp[n][i] / all;
+        }
+        return res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
