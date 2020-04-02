@@ -33,6 +33,7 @@ public class P面试题10IIQingWaTiaoTaiJieWenTiLcof{
         Solution solution = new P面试题10IIQingWaTiaoTaiJieWenTiLcof().new Solution();
     }
     //leetcode submit region begin(Prohibit modification and deletion)
+    // 动态规划
     class Solution {
         public int numWays(int n) {
             if(n==0) return 1;
@@ -45,6 +46,8 @@ public class P面试题10IIQingWaTiaoTaiJieWenTiLcof{
             return dp[n];
         }
     }
+    // 暴力递归
+    // 记忆化递归
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

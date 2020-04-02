@@ -33,7 +33,8 @@ package leetcode.editor.cn;
 import java.util.HashMap;
 import java.util.Map;
 
-//java:重建二叉树
+//java:
+
 public class P面试题07ZhongJianErChaShuLcof{
     public static void main(String[] args) {
         Solution solution = new P面试题07ZhongJianErChaShuLcof().new Solution();

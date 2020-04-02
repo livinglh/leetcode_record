@@ -23,17 +23,28 @@ package leetcode.editor.cn;
 public class P面试题11XuanZhuanShuZuDeZuiXiaoShuZiLcof{
     public static void main(String[] args) {
         Solution solution = new P面试题11XuanZhuanShuZuDeZuiXiaoShuZiLcof().new Solution();
+        solution.minArray(new int[]{3,1,1});
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int minArray(int[] numbers) {
-        int num = numbers.length;
-        int i = 0, j = num-1;
-        while(i<j){
-            int m = (i+j)/2;
-            if(numbers[m] > numbers[j]) i = m+1;
+//        int num = numbers.length;
+//        int i = 0, j = num-1;
+//        while(i<j){
+//            int m = (i+j)/2;
+//            if(numbers[m] > numbers[j]) i = m+1;
+//            else if(numbers[m] < numbers[j]) j = m;
+//            else j--;
+//        }
+//        return numbers[i];
+
+        int n = numbers.length;
+        int i = 0, j = n - 1;
+        while(i<=j){
+            int m = i + (j - i) / 2;
+            if(numbers[m] > numbers[j]) i = m + 1;
             else if(numbers[m] < numbers[j]) j = m;
-            else j--;
+            else j = j - 1;
         }
         return numbers[i];
     }
