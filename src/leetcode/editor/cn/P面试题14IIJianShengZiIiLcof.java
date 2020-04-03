@@ -36,7 +36,7 @@ public class P面试题14IIJianShengZiIiLcof{
         Solution solution = new P面试题14IIJianShengZiIiLcof().new Solution();
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-// class Solution {
+// class Solution {   //大数时该方法出错
 //     public int cuttingRope(int n) {
 //         if(n <= 3) return n - 1;
 //         int mod = 1000000007;
