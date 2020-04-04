@@ -101,14 +101,14 @@
 
 ## leetcode
 
-| Title-Link                                                   | Describe                                                     | Method                          | Note |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------- | ---- |
-| [820 单词的压缩编码](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P820ShortEncodingOfWords.java) | 对有公共后缀的字符串合并                                     | 字典树（后缀版） Hashset去重    |      |
-| [1162 地图分析](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P1162AsFarFromLandAsPossible.java) | 二维数组，0为海洋，1为陆地，寻找距离陆地最远的海洋，返回最远距离 | BFS，多源BFS                    |      |
-| 912 排序数组                                                 | 数组排序                                                     | 多种排序方法                    |      |
-| 1111 有效括号的嵌套深度                                      | 给你一个有效括号字符串 seq，将其分成两个不相交的子序列 A 和 B，且 A 和 B 满足有效括号字符串的定义 | 找规律                          |      |
-| 289 生命游戏                                                 | 细胞生存状态转化                                             | 暴力解就完事                    |      |
-| 42 接雨水                                                    | 给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水 | 逐个遍历 动态规划 双指针 单调栈 |      |
+| Title-Link                                                   | Describe                                                     | Method                                       | Note |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------------- | ---- |
+| [820 单词的压缩编码](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P820ShortEncodingOfWords.java) | 对有公共后缀的字符串合并                                     | 字典树（后缀版） Hashset去重                 |      |
+| [1162 地图分析](https://github.com/livinglh/leetcode_record/blob/master/src/leetcode/editor/cn/P1162AsFarFromLandAsPossible.java) | 二维数组，0为海洋，1为陆地，寻找距离陆地最远的海洋，返回最远距离 | BFS，多源BFS                                 |      |
+| 912 排序数组                                                 | 数组排序                                                     | 多种排序方法                                 |      |
+| 1111 有效括号的嵌套深度                                      | 给你一个有效括号字符串 seq，将其分成两个不相交的子序列 A 和 B，且 A 和 B 满足有效括号字符串的定义 | 找规律                                       |      |
+| 289 生命游戏                                                 | 细胞生存状态转化                                             | 暴力解就完事                                 |      |
+| 42 接雨水                                                    | 给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水 | 逐个遍历 动态规划 双指针 单调栈 以最大值分界 |      |
 
 ## 剑指_2
 
