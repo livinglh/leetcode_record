@@ -251,6 +251,7 @@ public class P460LfuCache{
          *
          * @param frequent
          * @param addNode
+         *
          */
         private void addListNode2Head(int frequent, ListNode addNode) {
             DoubleLinkedList doubleLinkedList;
