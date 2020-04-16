@@ -52,17 +52,24 @@ class Solution {
         if(n == 0) return true;
         int i = 0;
         Stack<Integer> stack = new Stack<>();
+//        for (int index = 0; index < n; index++) {
+//            if(!stack.empty() && stack.peek() == popped[index]){
+//                stack.pop();
+//                continue;
+//            }
+//            while(i < n){
+//                stack.push(pushed[i++]);
+//                if(stack.peek() == popped[index]){
+//                    stack.pop();
+//                    break;
+//                }
+//            }
+//        }
         for (int index = 0; index < n; index++) {
-            if(!stack.empty() && stack.peek() == popped[index]){
+            stack.push(pushed[index]);
+            while(!stack.empty() && stack.peek() == popped[i]){
                 stack.pop();
-                continue;
-            }
-            while(i < n){
-                stack.push(pushed[i++]);
-                if(stack.peek() == popped[index]){
-                    stack.pop();
-                    break;
-                }
+                i++;
             }
         }
         if(stack.empty()) return true;

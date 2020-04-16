@@ -22,13 +22,14 @@
   
 package leetcode.editor.cn;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 //java:字符串的排列
 public class P面试题38ZiFuChuanDePaiLieLcof{
     public static void main(String[] args) {
         Solution solution = new P面试题38ZiFuChuanDePaiLieLcof().new Solution();
+        String[] ans = solution.permutation("aabc");
+        System.out.println(ans);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
@@ -78,7 +79,9 @@ class Solution {
 //        }
 //
 //        for(int i = 0; i < s.length; i++){
-//            if(i != 0 && s[i] == s[i - 1] && visited[i - 1]) continue;
+//            if(i != 0 && s[i] == s[i - 1] && visited[i - 1]){
+//                continue;
+//            }
 //            if(!visited[i]){
 //                list.addLast(s[i]);
 //                visited[i] = true;
