@@ -52,7 +52,7 @@ public class P面试题56IShuZuZhongShuZiChuXianDeCiShuLcof{
                     ans2^=nums[i];
                 }
             }
-
+            //return new int[] {ans1, ans2};
             return new int[] {ans1^0, ans2^0};
         }
     }

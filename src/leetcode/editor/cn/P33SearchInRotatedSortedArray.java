@@ -41,7 +41,7 @@ class Solution {
             if (nums[mid] == target) {
                 return mid;
             }
-            //前半部分有序,注意此处用小于等于
+            //前半部分有序,注意此处用小于等于 [3,1] 1
             if (nums[start] <= nums[mid]) {
                 //target在前半部分
                 if (target >= nums[start] && target < nums[mid]) {
