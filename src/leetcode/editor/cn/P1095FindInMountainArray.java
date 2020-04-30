@@ -72,10 +72,14 @@ public class P1095FindInMountainArray{
     public static void main(String[] args) {
         Solution solution = new P1095FindInMountainArray().new Solution();
     }
-//    interface MountainArray {
-//        public int get(int index) {}
-//        public int length() {}
-//    }
+    class MountainArray {
+        public int get(int index) {
+            return 0;
+        }
+        public int length() {
+            return 0;
+        }
+    }
     //leetcode submit region begin(Prohibit modification and deletion)
 /**
  * // This is MountainArray's API interface.
