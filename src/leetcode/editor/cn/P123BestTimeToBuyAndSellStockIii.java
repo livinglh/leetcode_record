@@ -33,6 +33,7 @@ package leetcode.editor.cn;
 public class P123BestTimeToBuyAndSellStockIii{
     public static void main(String[] args) {
         Solution solution = new P123BestTimeToBuyAndSellStockIii().new Solution();
+        solution.maxProfit(new int[]{3,3,5,0,0,3,1,4});
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
@@ -41,12 +42,12 @@ class Solution {
             return 0;
         }
 
-        // 动态规划 dp[i][k][s] 表示状态为第i天，交易次数为k，当前是否持有股票（0无，1有）时，最大利润为多少
+        // 动态规划 dp[i][k][s] 表示状态为第i天，交易次数为k，当天结束是否持有股票（0无，1有）时，最大利润为多少
         // 买入，交易次数+1
         int maxk = 2;
         int[][][] dp = new int[prices.length][maxk+1][2];
 
-        // 处理base case
+        // 初始化 why？
         for (int k = 0; k < maxk + 1; k++) {
             dp[0][k][1] = -prices[0];
         }

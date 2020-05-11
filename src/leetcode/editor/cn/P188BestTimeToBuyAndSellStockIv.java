@@ -54,7 +54,7 @@ class Solution {
         // 买入，交易次数+1
         int[][][] dp = new int[prices.length][k+1][2];
 
-        // 处理base case
+        // 初始化
         for (int ki = 0; ki < k + 1; ki++) {
             dp[0][ki][1] = -prices[0];
         }
