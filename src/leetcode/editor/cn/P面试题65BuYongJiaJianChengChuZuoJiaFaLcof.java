@@ -25,16 +25,16 @@ public class P面试题65BuYongJiaJianChengChuZuoJiaFaLcof{
         Solution solution = new P面试题65BuYongJiaJianChengChuZuoJiaFaLcof().new Solution();
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int add(int a, int b) {
-        while (a != 0) {
-            int temp = a ^ b;
-            a = (a & b) << 1;
-            b = temp;
+    class Solution {
+        public int add(int a, int b) {
+            while(b != 0) { // 当进位为 0 时跳出
+                int c = (a & b) << 1;  // c = 计算进位
+                a ^= b; // a = 非进位和
+                b = c; // b = 进位
+            }
+            return a;
         }
-        return b;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
