@@ -37,7 +37,7 @@ class Solution {
             if(nums[m] == m) l = m + 1;
             else r = m - 1;
         }
-        if(r < 0) return 0;
+        //if(r < 0) return 0;
         return r+1;
     }
 }

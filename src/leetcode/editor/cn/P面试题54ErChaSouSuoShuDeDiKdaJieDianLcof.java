@@ -63,13 +63,13 @@ class Solution {
     public void DFS(TreeNode root, int k){
         if(root == null) return;
         if(index > k) return;
-        kthLargest(root.right, k);
+        DFS(root.right, k);
         index ++;
         if(index == k){
             ans = root.val;
             return;
         }
-        kthLargest(root.left, k);
+        DFS(root.left, k);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
