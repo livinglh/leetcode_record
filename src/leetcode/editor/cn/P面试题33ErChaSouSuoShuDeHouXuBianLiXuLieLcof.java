@@ -42,6 +42,7 @@ public class P面试题33ErChaSouSuoShuDeHouXuBianLiXuLieLcof{
     }
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+        // 1. 递归 On On
         public boolean verifyPostorder(int[] postorder) {
             return recur(postorder, 0, postorder.length - 1);
         }
@@ -53,6 +54,9 @@ public class P面试题33ErChaSouSuoShuDeHouXuBianLiXuLieLcof{
             while(po[l] > po[j]) l++;
             return l == j && recur(po, i, m - 1) && recur(po, m, j - 1);
         }
+
+        // 2. 辅助单调栈
+
     }
 //leetcode submit region end(Prohibit modification and deletion)
 

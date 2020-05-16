@@ -91,19 +91,55 @@ class Node {
 */
 class Solution {
     public Node copyRandomList(Node head) {
-        Map<Node,Node> map=new HashMap<>();
-        Node p=head;
-        while(p!=null){
-            map.put(p,new Node(p.val));
-            p=p.next;
+        //Map On On
+//        Map<Node,Node> map=new HashMap<>();
+//        Node p=head;
+//        while(p!=null){
+//            map.put(p,new Node(p.val));
+//            p=p.next;
+//        }
+//        p=head;
+//        while(p!=null){
+//            map.get(p).next=map.get(p.next);
+//            map.get(p).random=map.get(p.random);
+//            p=p.next;
+//        }
+//        return map.get(head);
+        // 复制拆分 On O1
+        if(head==null) return null;
+        copy2(head);
+        randomAdd2(head);
+        return build2(head);
+    }
+
+    public void copy2(Node head){
+        while(head!=null){
+            Node copy = new Node(head.val);
+            copy.next = head.next;
+            head.next =copy;
+            head = copy.next;
         }
-        p=head;
-        while(p!=null){
-            map.get(p).next=map.get(p.next);
-            map.get(p).random=map.get(p.random);
-            p=p.next;
+    }
+    public void randomAdd2(Node head){
+        while(head!=null){
+            if(head.random!=null) head.next.random = head.random.next;
+            head=head.next.next;
         }
-        return map.get(head);
+    }
+    public Node build2(Node head) {
+        //将链表拆成两个，注意要恢复原有的链表
+        Node res = head.next;
+        Node tmp = res;
+
+        head.next = head.next.next;//这一步不可缺少，保证第一个复制节点对N N'的分离操作
+        head = head.next;
+        while (head != null) {
+            tmp.next = head.next;
+            head.next = head.next.next;
+            tmp = tmp.next;
+            head = head.next;
+        }
+        return res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
