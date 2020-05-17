@@ -69,7 +69,7 @@ public class P面试题19ZhengZeBiaoDaShiPiPeiLcof{
             return match(s,p);
         }
         private boolean match(String s,String p){
-            //如果p长度为0，则返回s是否匹配完
+            //如果p长度为0，则返回s是否匹配完·
             if (p.length() == 0) {
                 return s.length() == 0;
             }

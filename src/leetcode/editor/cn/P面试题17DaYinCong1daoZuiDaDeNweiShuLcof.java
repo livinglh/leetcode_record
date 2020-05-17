@@ -18,12 +18,18 @@
 
   
 package leetcode.editor.cn;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 //java:打印从1到最大的n位数
 public class P面试题17DaYinCong1daoZuiDaDeNweiShuLcof{
     public static void main(String[] args) {
         Solution solution = new P面试题17DaYinCong1daoZuiDaDeNweiShuLcof().new Solution();
     }
     //leetcode submit region begin(Prohibit modification and deletion)
+
+    // 1.  简单解法
 class Solution {
     public int[] printNumbers(int n) {
         int nums = (int)Math.pow(10,n);
@@ -34,6 +40,10 @@ class Solution {
         return ans;
     }
 }
+
+    //2. 考虑大数
+
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

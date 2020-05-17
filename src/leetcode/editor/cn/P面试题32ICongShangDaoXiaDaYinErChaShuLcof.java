@@ -67,11 +67,11 @@ class Solution {
             if(cur.left != null) queue.offer(cur.left);
             if(cur.right != null) queue.offer(cur.right);
         }
-        int[] res = new int[ans.size()];
-        for(int i = 0;i < ans.size();i++){
-            res[i] = ans.get(i);
-        }
-        return res;
+//        int[] res = new int[ans.size()];
+//        for(int i = 0;i < ans.size();i++){
+//            res[i] = ans.get(i);
+//        }
+        return ans.stream().mapToInt(Integer::intValue).toArray();
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

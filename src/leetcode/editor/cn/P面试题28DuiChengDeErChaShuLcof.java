@@ -39,6 +39,10 @@
 
   
 package leetcode.editor.cn;
+
+import java.util.Deque;
+import java.util.LinkedList;
+
 //java:对称的二叉树
 public class P面试题28DuiChengDeErChaShuLcof{
     public static void main(String[] args) {
@@ -61,15 +65,41 @@ public class P面试题28DuiChengDeErChaShuLcof{
  * }
  */
 class Solution {
+    // 1. 递归
+//    public boolean isSymmetric(TreeNode root) {
+//        if(root == null) return true;
+//        return reback(root.left, root.right);
+//    }
+//    public boolean reback(TreeNode left,TreeNode right){
+//        if(left == null && right == null) return true;
+//        if(left == null || right == null || left.val != right.val) return false;
+//        return reback(left.left, right.right) && reback(left.right, right.left);
+//    }
+    // 2. bfs
     public boolean isSymmetric(TreeNode root) {
-        if(root == null) return true;
-        return reback(root.left, root.right);
+        if (root == null) return true;
+
+        Deque<TreeNode> d = new LinkedList<>();
+        d.addFirst(root.left);
+        d.addLast(root.right);
+
+        while (!d.isEmpty()) {
+            TreeNode leftnode = d.removeFirst();
+            TreeNode rightnode = d.removeLast();
+            if (leftnode == null && rightnode == null)
+                continue;
+            if (leftnode == null || rightnode == null || leftnode.val != rightnode.val)
+                return false;
+
+            d.addFirst(leftnode.right);
+            d.addFirst(leftnode.left);
+            d.addLast(rightnode.left);
+            d.addLast(rightnode.right);
+
+        }
+        return true;
     }
-    public boolean reback(TreeNode left,TreeNode right){
-        if(left == null && right == null) return true;
-        if(left == null || right == null || left.val != right.val) return false;
-        return reback(left.left, right.right) && reback(left.right, right.left);
-    }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
