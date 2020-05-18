@@ -58,8 +58,6 @@ public class P5LongestPalindromicSubstring{
                             }
                         }
                     }
-
-
                 }
             }
             return s.substring(maxend-maxlen+1,maxend+1);
