@@ -62,6 +62,7 @@ class Solution {
             return dp[n];
 
 //法3 暴力法 超时 树 时间复杂度2的n次方
+//    public int climbStairs(int n) {
 //        return climb_Stairs(0, n);
 //    }
 //    public int climb_Stairs(int i, int n) {
@@ -75,6 +76,7 @@ class Solution {
 //    }
 //法4 对法3进行优化 减少多余的计算
 //把每一步的结果存储在 memo 数组之中，每当函数再次被调用，我们就直接从 memo 数组返回结果
+//        public int climbStairs(int n) {
 //            int[] memo = new int[n + 1];
 //            return climb_Stairs(0, n, memo);
 //        }
