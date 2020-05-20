@@ -24,6 +24,10 @@
 
   
 package leetcode.editor.cn;
+
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import org.w3c.dom.ls.LSOutput;
+
 //java:验证回文字符串 Ⅱ
 public class P680ValidPalindromeIi{
     public static void main(String[] args) {
@@ -43,8 +47,6 @@ class Solution {
         }
         return true;
     }
-
-
     public boolean help(String s, int left, int right){
         while(left < right){
             if(s.charAt(left) == s.charAt(right)){

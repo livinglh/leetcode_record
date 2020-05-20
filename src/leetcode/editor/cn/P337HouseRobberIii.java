@@ -60,8 +60,8 @@ public class P337HouseRobberIii{
  */
 class Solution {
     Map<TreeNode,Integer> map = new HashMap<>();
-    public int rob(TreeNode root) {
-        // 带备忘录的递归
+    // 1. 带备忘录的递归
+//    public int rob(TreeNode root) {
 //        if(root == null) return 0;
 //        if(map.containsKey(root)) return map.get(root);
 //        // 不偷该节点
@@ -77,7 +77,9 @@ class Solution {
 //        int ans = Math.max(res1,res2);
 //        map.put(root, ans);
 //        return ans;
-        // 动态规划？
+//    }
+    // 2. 动态规划
+    public int rob(TreeNode root) {
         int[] ans = myrob(root);
         return Math.max(ans[0], ans[1]);
     }
