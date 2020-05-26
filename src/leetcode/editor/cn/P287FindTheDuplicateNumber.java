@@ -37,15 +37,45 @@ public class P287FindTheDuplicateNumber{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int findDuplicate(int[] nums) {
-        // set
-        Set<Integer> set = new HashSet<>();
-        for (int i = 0; i < nums.length; i++) {
-            if(set.contains(nums[i])){
-                return nums[i];
-            }
-            set.add(nums[i]);
+        //1. set
+//        Set<Integer> set = new HashSet<>();
+//        for (int i = 0; i < nums.length; i++) {
+//            if(set.contains(nums[i])){
+//                return nums[i];
+//            }
+//            set.add(nums[i]);
+//        }
+//        return -1;
+        //2. 二分
+//        int n = nums.length;
+//        int l = 1, r = n - 1, ans = -1;
+//        while (l <= r) {
+//            int mid = (l + r) >> 1;
+//            int cnt = 0;
+//            for (int i = 0; i < n; ++i) {
+//                if (nums[i] <= mid) {
+//                    cnt++;
+//                }
+//            }
+//            if (cnt <= mid) {
+//                l = mid + 1;
+//            } else {
+//                r = mid - 1;
+//            }
+//        }
+//        return l;
+        //3. 快慢指针
+        int slow = 0, fast = 0;
+        do {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while (slow != fast);
+        slow = 0;
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
         }
-        return -1;
+        return slow;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
