@@ -1,9 +1,12 @@
 package leetcode.editor.cn;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class inter_code {
     public static void main(String[] args) {
         Solution solution = new inter_code().new Solution();
-        int ans = solution.solve("0001111000000011111");
+        int ans = solution.solve(5,new int[]{1,0,0,0,1});
         System.out.println(ans);
     }
 
@@ -98,18 +101,103 @@ public class inter_code {
 //            return ans;
 //        }
         // 连续1的个数
-        public int solve(String str){
-            char[] chars = str.toCharArray();
-            int max = 0;
-            int tempmax = 0;
-            for(int i = 0; i < chars.length; i++){
-                if(i == 0) tempmax = chars[i]=='1'? 1:0;
-                else if(chars[i] == '1' && chars[i-1] == '1') tempmax += 1;
-                else if(chars[i] == '1' && chars[i-1] == '0') tempmax=1;
-                else if(chars[i] == '0' && chars[i-1] == '1') max = Math.max(max,tempmax);
-                else continue;
+//        public int solve(String str){
+//            char[] chars = str.toCharArray();
+//            int max = 0;
+//            int tempmax = 0;
+//            for(int i = 0; i < chars.length; i++){
+//                if(i == 0) tempmax = chars[i]=='1'? 1:0;
+//                else if(chars[i] == '1' && chars[i-1] == '1') tempmax += 1;
+//                else if(chars[i] == '1' && chars[i-1] == '0') tempmax=1;
+//                else if(chars[i] == '0' && chars[i-1] == '1') max = Math.max(max,tempmax);
+//                else continue;
+//            }
+//            return Math.max(max,tempmax);
+//        }
+        public int solve(int n, int[] nums){
+            int pre = -1;
+            int res = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if(nums[i] == 1) {
+                    if ((i - pre) % 2 == 1) {
+                        res += (i - pre) / 2;
+                    } else {
+                        res += (i - 1 - pre) / 2;
+                    }
+                    pre = i;
+                    break;
+                }
             }
-            return Math.max(max,tempmax);
+            for (int i = pre+1; i < nums.length; i++) {
+                if(nums[i] == 1){
+                    if ((i - pre) % 2 == 1) {
+                        res += (i + 1 - pre) / 2 - 1;
+                    } else {
+                        res += (i - pre) / 2 - 1;
+                    }
+                    pre = i;
+                }
+            }
+            if((n-pre)%2 == 1){
+                res += (n-pre)/2;
+            }
+            else{
+                res += (n-1-pre)/2;
+            }
+            return res;
         }
+//        public ListNode solve(ListNode[] lists) {
+//            PriorityQueue<ListNode> priorityQueue = new PriorityQueue<>(((o1, o2) -> {
+//                if(o1.val < o2.val) return -1;
+//                else if (o1.val == o2.val) return 0;
+//                else return 1;
+//            }));
+//            ListNode head = new ListNode(0);
+//            ListNode cur = head;
+//            for (ListNode node: lists) {
+//                if(node!=null)  priorityQueue.offer(node);
+//            }
+//            while(!priorityQueue.isEmpty()){
+//                cur.next = priorityQueue.poll();
+//                cur = cur.next;
+//                if(cur.next != null) priorityQueue.offer(cur.next);
+//            }
+//        return head.next;
+//        public int solve(int K, int N) {
+//            return dp(K, N);
+//        }
+//
+//        Map<Integer, Integer> memo = new HashMap();
+//        public int dp(int K, int N) {
+//            if (!memo.containsKey(N * 100 + K)) {
+//                int ans;
+//                if (N == 0)
+//                    ans = 0;
+//                else if (K == 1)
+//                    ans = N;
+//                else {
+//                    int lo = 1, hi = N;
+//                    while (lo + 1 < hi) {
+//                        int x = (lo + hi) / 2;
+//                        int t1 = dp(K-1, x-1);
+//                        int t2 = dp(K, N-x);
+//
+//                        if (t1 < t2)
+//                            lo = x;
+//                        else if (t1 > t2)
+//                            hi = x;
+//                        else
+//                            lo = hi = x;
+//                    }
+//
+//                    ans = 1 + Math.min(Math.max(dp(K-1, lo-1), dp(K, N-lo)),
+//                            Math.max(dp(K-1, hi-1), dp(K, N-hi)));
+//                }
+//
+//                memo.put(N * 100 + K, ans);
+//            }
+//
+//            return memo.get(N * 100 + K);
+//        }
     }
 }
