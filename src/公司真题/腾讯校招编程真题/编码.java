@@ -22,6 +22,5 @@ public class 编码 {
             }
         }
         System.out.println(sum);
-
     }
 }
