@@ -8,6 +8,9 @@
 
   
 package leetcode.editor.cn;
+
+import java.util.Stack;
+
 //java:每日温度
 public class P739DailyTemperatures{
     public static void main(String[] args) {
@@ -16,24 +19,43 @@ public class P739DailyTemperatures{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] dailyTemperatures(int[] T) {
-        int length = T.length;
-        int[] result = new int[length];
+        // 1. 遍历
+//        int length = T.length;
+//        int[] result = new int[length];
+//
+//        //从右向左遍历
+//        for (int i = length - 2; i >= 0; i--) {
+//            // j+= result[j]是利用已经有的结果进行跳跃
+//            for (int j = i + 1; j < length; j+= result[j]) {
+//                if (T[j] > T[i]) {
+//                    result[i] = j - i;
+//                    break;
+//                } else if (result[j] == 0) { //遇到0表示后面不会有更大的值，那当然当前值就应该也为0
+//                    result[i] = 0;
+//                    break;
+//                }
+//            }
+//        }
+//
+//        return result;
 
-        //从右向左遍历
-        for (int i = length - 2; i >= 0; i--) {
-            // j+= result[j]是利用已经有的结果进行跳跃
-            for (int j = i + 1; j < length; j+= result[j]) {
-                if (T[j] > T[i]) {
-                    result[i] = j - i;
-                    break;
-                } else if (result[j] == 0) { //遇到0表示后面不会有更大的值，那当然当前值就应该也为0
-                    result[i] = 0;
-                    break;
-                }
+        //2. 单调栈
+        int len = T.length;
+        int[] res = new int[len];
+
+        Stack<Integer> stack = new Stack<>();
+        for(int i = 0; i < len ; i++){
+            while(!stack.isEmpty() && T[stack.peek()] < T[i]){
+                int cur = stack.pop();
+                res[cur] = i - cur;
             }
+            stack.push(i);
         }
-
-        return result;
+        while(!stack.isEmpty()){
+            int cur = stack.pop();
+            res[cur] = 0;
+        }
+        return res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
