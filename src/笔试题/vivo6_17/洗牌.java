@@ -1,6 +1,5 @@
 package 笔试题.vivo6_17;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class 洗牌 {
