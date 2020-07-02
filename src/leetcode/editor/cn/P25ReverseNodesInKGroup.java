@@ -84,7 +84,7 @@ class Solution {
         }
     }
 
-    //翻转链表 返回新的头尾节点
+    //翻转链表 返回新的头尾节点  翻转范围[cur, tail-1)
     public ListNode[] reverserNode(ListNode cur, ListNode tail){
         ListNode newtail = cur;
         ListNode pre = null;
