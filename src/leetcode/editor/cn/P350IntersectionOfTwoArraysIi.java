@@ -27,7 +27,7 @@
 // 
 // Related Topics 排序 哈希表 双指针 二分查找
 
-  
+
 package leetcode.editor.cn;
 
 import java.util.HashMap;
@@ -36,38 +36,39 @@ import java.util.List;
 import java.util.Map;
 
 //java:两个数组的交集 II
-public class P350IntersectionOfTwoArraysIi{
+public class P350IntersectionOfTwoArraysIi {
     public static void main(String[] args) {
         Solution solution = new P350IntersectionOfTwoArraysIi().new Solution();
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] intersect(int[] nums1, int[] nums2) {
-        //1. 哈希表
-        if(nums1.length > nums2.length){
-            return intersect(nums2, nums1);
-        }
-        Map<Integer, Integer> record = new HashMap<>();
-        for (int num:nums1) {
-            int count = record.getOrDefault(num, 0) + 1;
-            record.put(num, count);
-        }
-        List<Integer> ans = new LinkedList<>();
-        for (int num:nums2) {
-            int count = record.getOrDefault(num, 0);
-            if(count > 0){
-                ans.add(num);
-                count--;
-                if(count > 0){
-                    record.put(num, count);
-                }else{
-                    record.remove(num);
+    class Solution {
+        public int[] intersect(int[] nums1, int[] nums2) {
+            //1. 哈希表
+            if (nums1.length > nums2.length) {
+                return intersect(nums2, nums1);
+            }
+            Map<Integer, Integer> record = new HashMap<>();
+            for (int num : nums1) {
+                int count = record.getOrDefault(num, 0) + 1;
+                record.put(num, count);
+            }
+            List<Integer> ans = new LinkedList<>();
+            for (int num : nums2) {
+                int count = record.getOrDefault(num, 0);
+                if (count > 0) {
+                    ans.add(num);
+                    count--;
+                    if (count > 0) {
+                        record.put(num, count);
+                    } else {
+                        record.remove(num);
+                    }
                 }
             }
+            return ans.stream().mapToInt(Integer::intValue).toArray();
         }
-        return ans.stream().mapToInt(Integer::intValue).toArray();
     }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }
