@@ -79,7 +79,6 @@ public class P437PathSumIii {
             rec(root.left,sum,cursum);
             rec(root.right,sum,cursum);
             map.put(cursum,map.get(cursum) - 1);
-            cursum -= cursum;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

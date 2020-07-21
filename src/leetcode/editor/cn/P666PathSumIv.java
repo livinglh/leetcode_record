@@ -44,17 +44,54 @@
 
   
 package leetcode.editor.cn;
+
+import java.util.HashMap;
+import java.util.Map;
+
 //java:路径和 IV
 public class P666PathSumIv{
     public static void main(String[] args) {
         Solution solution = new P666PathSumIv().new Solution();
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int pathSum(int[] nums) {
+    class Solution {
+        int res = 0, curVal = 0;
 
+        public int pathSum(int[] nums) {
+            if (nums.length == 0) return 0;
+            Map<Integer, Integer> map = new HashMap<>();
+            for (int num : nums) {
+                int depth = num / 100;
+                int pos = num / 10 % 10;
+                int val = num % 10;
+                int code = (int) Math.pow(2, depth - 1) + pos - 1;
+                map.put(code, val);
+            }
+            //递归
+            helper(map, 1);
+            return res;
+        }
+
+        private void helper(Map<Integer, Integer> map, int index) {
+            if (!map.containsKey(index)) return;
+            curVal += map.get(index);
+            //判断是否到达叶子节点
+            //到达
+            if (!map.containsKey(index * 2) && !map.containsKey(index * 2 + 1)) {
+                res += curVal;
+            }
+            //未到达
+            if (map.containsKey(index * 2)) {
+                helper(map, index * 2);
+            }
+            if (map.containsKey(index * 2 + 1)) {
+                helper(map, index * 2 + 1);
+            }
+            //回退
+            curVal -= map.get(index);
+        }
     }
-}
+
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
