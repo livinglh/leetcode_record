@@ -29,48 +29,55 @@
 // Related Topics 二分查找 
 // 👍 11 👎 0
 
-  
+
 package leetcode.editor.cn;
+
 //java:搜索长度未知的有序数组
-public class P702SearchInASortedArrayOfUnknownSize{
+public class P702SearchInASortedArrayOfUnknownSize {
     public static void main(String[] args) {
         Solution solution = new P702SearchInASortedArrayOfUnknownSize().new Solution();
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * // This is ArrayReader's API interface.
- * // You should not implement it, or speculate about its implementation
- * interface ArrayReader {
- *     public int get(int index) {}
- * }
- */
 
-class Solution {
-    public int search(ArrayReader reader, int target) {
-        if(reader.get(0) == target) return 0;
-        //寻找右边界
-        int left = 0, right = 1;
-        while(reader.get(right) < target){
-            left = right;
-            right <<= 1;
+    class ArrayReader {
+        public int get(int i) {
+            return 0;
         }
-
-        //二分搜索
-        while(left <= right){
-            int mid = left + ((right - left) >> 1);
-            int cur = reader.get(mid);
-            if(cur < target){
-                left = mid + 1;
-            }else if(cur > target){
-                right = mid - 1;
-            }else{
-                return mid;
-            }
-        }
-
-        return -1;
     }
-}
+    //leetcode submit region begin(Prohibit modification and deletion)
+
+    /**
+     * // This is ArrayReader's API interface.
+     * // You should not implement it, or speculate about its implementation
+     * interface ArrayReader {
+     * public int get(int index) {}
+     * }
+     */
+    class Solution {
+        public int search(ArrayReader reader, int target) {
+            if (reader.get(0) == target) return 0;
+            //寻找右边界
+            int left = 0, right = 1;
+            while (reader.get(right) < target) {
+                left = right;
+                right <<= 1;
+            }
+
+            //二分搜索
+            while (left <= right) {
+                int mid = left + ((right - left) >> 1);
+                int cur = reader.get(mid);
+                if (cur < target) {
+                    left = mid + 1;
+                } else if (cur > target) {
+                    right = mid - 1;
+                } else {
+                    return mid;
+                }
+            }
+
+            return -1;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
