@@ -36,7 +36,7 @@ public class P378KthSmallestElementInASortedMatrix {
             // 二分查找
             int len = matrix.length;
             int left = matrix[0][0];
-            int right = matrix[len - 1][len - 1];
+            int right = matrix[len - 1][len - 1]+1;
             while (left < right) {
                 int mid = left + (right - left) / 2;
                 int midnum = checkmid(matrix, mid);  // 矩阵中小于等于mid的数量

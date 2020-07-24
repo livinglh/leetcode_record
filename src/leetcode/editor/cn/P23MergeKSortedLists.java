@@ -39,6 +39,7 @@ public class P23MergeKSortedLists{
  */
 class Solution {
     // 1. 优先级队列
+    // 每次 O(logK) 比较 K个指针求 min, 时间复杂度：O(NlogK)
 //    public ListNode mergeKLists(ListNode[] lists) {
 //        PriorityQueue<ListNode> priorityQueue = new PriorityQueue<>(((o1, o2) -> {
 //            if(o1.val < o2.val) return -1;

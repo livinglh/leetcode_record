@@ -1,7 +1,5 @@
 package 常用算法;
 
-import leetcode.editor.cn.P785IsGraphBipartite;
-
 public class 最长公共子序列 {
     public static int lcs(String str1, String str2) {
         int len1 = str1.length();
