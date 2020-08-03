@@ -44,13 +44,13 @@ public class 完全背包 {
     }
 
     // 朴素做法 O(NV) O(NV)
-    public static int solution1(int N, int V, int[] c, int[] w){
+    public static int solution1(int N, int V, int[] v, int[] w){
         int[][] dp = new int[N+1][V+1];
         for (int i = 1; i <= N; i++) {
             for (int j = 0; j <= V; j++) {
                 dp[i][j] = dp[i-1][j]; //不选
-                if(j >= c[i]){ //选择
-                    dp[i][j] = Math.max(dp[i][j], dp[i][j-c[i]] + w[i]);
+                if(j >= v[i]){ //选择
+                    dp[i][j] = Math.max(dp[i][j], dp[i][j-v[i]] + w[i]);
                 }
             }
         }
