@@ -6,7 +6,7 @@ public class Main3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Map<String, List<String>> map = new HashMap<>();  // key: 结构题名称 value：该结构体内所含结构体列表
-        Set<String> set = new HashSet<>();  // 记录需要计算的结构题
+        Map<String, Integer> memo = new HashMap<>();  // 记录需要计算的结构题
         String start;
         while(true){
             String s = sc.nextLine();
@@ -35,24 +35,31 @@ public class Main3 {
         }
 
 
-        int ans = DFS(map, set, start);
+        int ans = DFS(map, memo, start);
         System.out.println(ans);
     }
-    // set解决循环依赖问题
-    public static int DFS(Map<String, List<String>> map, Set<String> set, String s){
+    // memo备忘录，同时解决循环依赖问题
+    public static int DFS(Map<String, List<String>> map, Map<String, Integer> memo, String s){
         if(s.equals("char")) return 1;
         if(s.equals("short")) return 2;
         if(s.equals("long")) return 4;
-        if(!map.containsKey(s) || set.contains(s)) return 0;
+        if(!map.containsKey(s)) return 0;
+        if(memo.containsKey(s)){
+            if(memo.get(s) != -1){
+                return memo.get(s);
+            }else{
+                return 0;
+            }
+        }
+        memo.put(s, -1);
         List<String> slist = map.get(s);
         int res = 0;
         for(String sl : slist){
-            set.add(sl);
-            int r = DFS(map, set, sl);
-            set.remove(sl);
+            int r = DFS(map, memo, sl);
             if(r == 0) return 0;
             res += r;
         }
+        memo.put(s, res);
         return res;
     }
 }
