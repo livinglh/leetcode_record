@@ -1,6 +1,5 @@
 package 笔试题.test;
 
-import com.sun.jmx.snmp.SnmpUnknownMsgProcModelException;
 
 import java.util.Scanner;
 
