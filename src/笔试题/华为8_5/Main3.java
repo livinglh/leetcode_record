@@ -2,6 +2,7 @@ package 笔试题.华为8_5;
 
 import java.util.Scanner;
 
+
 /*
 3 100 20
 10 8 5
@@ -27,8 +28,12 @@ public class Main3 {
         }
         int[] nums = new int[n];
         // 计算可使用次数
-        for (int i = 0; i < n; i++) {
-            nums[i] = savetimesum / time[i];
+        for (int i = 0; i < n; i++) {   // 如果存活时间T能整除冷却时间t，应该取max(T/t,1)，否则取T/t＋1。
+            if(savetimesum % time[i] == 0){
+                nums[i] = savetimesum / time[i];
+            }else{
+                nums[i] = savetimesum / time[i] + 1;
+            }
         }
 
 
