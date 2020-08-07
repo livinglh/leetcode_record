@@ -1,39 +1,41 @@
 package 笔试题.test;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.Scanner;
 
 public class test {
-    public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        String s = sc.nextLine();
-//        HashSet<Character> set = new HashSet<>();
-//        StringBuilder strB = new StringBuilder();
-//        for(int i = 0; i < s.length(); i++){
-//            char c = s.charAt(i);
-//            if(set.contains(c)){
-//                continue;
-//            }else {
-//                set.add(c);
-//                strB.append(c);
-//            }
-//        }
-//        System.out.println(strB.toString());
-        Scanner sc = new Scanner(System.in);
-        HashSet<Character> set = new HashSet<>();
-        while(sc.hasNext()){
-            char[] c = sc.next().toCharArray();
-            StringBuilder strB = new StringBuilder();
-            for(int i = 0; i < c.length; i++){
-                if (set.contains(c[i])) {
-                    continue;
-                } else {
-                    set.add(c[i]);
-                    strB.append(c[i]);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str;
+        while((str = br.readLine()) != null) {
+            String[] temp = str.split(" ");
+            int count = Integer.parseInt(temp[0]); // 技能个数
+            int magic = Integer.parseInt(temp[1]); // 角色魔法值
+            int roletime = Integer.parseInt(temp[2]); // 角色存活时间
+            int[] hurt = new int[count]; // 技能伤害值
+            int[] cost = new int[count]; // 技能消耗的魔法值
+            int[] cooltime = new int[count]; // 技能冷却时间
+            int[] times = new int[count]; // 每个技能最多使用次数
+            for(int i = 0; i < count; i++) {
+                String[] data = br.readLine().split(" ");
+                hurt[i] = Integer.parseInt(data[0]);
+                cost[i] = Integer.parseInt(data[1]);
+                cooltime[i] = Integer.parseInt(data[2]);
+                //times[i] = Math.min(magic / cost[i], roletime / cooltime[i]);
+                times[i] = roletime % cooltime[i] == 0 ? roletime / cooltime[i] : roletime / cooltime[i] + 1;
+            }
+            int[] dp =new int[magic + 1];
+            for(int i = 0; i < count; i++) { // 技能总个数
+                for(int j = magic; j >= cost[i]; j--) { // 魔法值
+                    for(int k = 1; k <= times[i] && k * cost[i] <= j; k++) {
+                        dp[j] = Math.max(dp[j], dp[j - k * cost[i]] + k * hurt[i]);
+                    }
                 }
             }
-            System.out.println(strB.toString());
+            System.out.println(dp[magic]);
         }
-
     }
 }

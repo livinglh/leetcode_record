@@ -13,6 +13,7 @@ public class Main2 {
         int M = sc.nextInt();
         int ans = 0;
         for (int i = N; i <= M; i++) {
+            if(i >= 1 && i <= 9) continue;
             String str = String.valueOf(i);
             for (int j = 0, flag = 0; j < str.length() && flag == 0; j++) {
                 String strn = str.substring(0,j) + str.substring(j+1);

@@ -37,7 +37,7 @@ public class Main3 {
         }
 
 
-        int[] TIMES = new int[n];
+//        int[] TIMES = new int[n];
 //        dfs(n, magicsum, savetimesum, kill, magic, time, 0, TIMES);
         ans = solve(n, magicsum, kill, magic, nums);
         System.out.println(ans);
