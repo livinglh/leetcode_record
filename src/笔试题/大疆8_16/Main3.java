@@ -28,11 +28,11 @@ public class Main3 {
             ch[count++] = s.charAt(i);
         }
         int l = 0;
-        while(l < count && ch[l] == '0'){
+        while(l < count && ch[l] == '0'){   // 删除数字字符串的前置0
             l++;
         }
         String ans = "0";
-        if(l >= count - n){
+        if(l >= count - n){  // 若非0字符不够删
             System.out.println(ans);
         }else{
             ans = new String(ch,l,count-l-n);
