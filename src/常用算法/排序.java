@@ -1,5 +1,6 @@
 package 常用算法;
 
+import java.util.LinkedList;
 import java.util.Random;
 
 public class 排序 {
@@ -29,6 +30,40 @@ public class 排序 {
 
         return;
     }
+
+
+    // 快排非递归
+    public static void quickSortByStack(int[] nums, int left, int right){
+        LinkedList<int[]> stack = new LinkedList<>();
+        //保存左右边界
+        stack.push(new int[]{left, right});
+        while(!stack.isEmpty()){
+            int[] pair = stack.pop();
+            left = pair[0];
+            right = pair[1];
+            if(left >= right){
+                continue;
+            }
+            //partition过程，注意细节
+            int pivot = nums[left];
+            int lt = left;
+            for (int i = left + 1; i <= right; i++) {
+                if(nums[i] < pivot){
+                    lt++;
+                    swap(nums, i, lt);
+                }
+            }
+            swap(nums, lt, left);
+            //先入右边部分，再入左边部分
+            if(lt < right - 1){
+                stack.push(new int[]{lt + 1, right});
+            }
+            if(left < lt - 1){
+                stack.push(new int[]{left, lt - 1});
+            }
+        }
+    }
+
 
     public static void swap(int[] nums, int index1, int index2) {
         int temp = nums[index1];
@@ -65,7 +100,7 @@ public class 排序 {
 
     public static void main(String[] args) {
         int[] nums = {7, 2, 6, 3, 8, 34, 8, 2, 8, 5, 1, 1, 2, 0, 0};
-        quickSort(nums, 0, nums.length - 1);
+        quickSortByStack(nums, 0, nums.length - 1);
         System.out.println("快排：");
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i]);

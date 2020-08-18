@@ -1,6 +1,12 @@
-package 常用算法;
+package 常用算法.字符串匹配算法;
+/*
 
-// 返回字串在主串中的首位置
+ 返回字串在主串中的首位置
+
+ 给定两个字符串s和p，请你判断p是否是s的子串，并返回p在s中第一次出现的位置
+
+ 主串：s       模式串：p
+ */
 public class KMP算法 {
     // s[]是长文本，p[]是模式串，n是s的长度，m是p的长度
     public static int kmp(char[] s, char[] p){
