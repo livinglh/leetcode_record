@@ -51,19 +51,74 @@
 // 
 // Related Topics 栈 递归 哈希表
 
-  
+
 package leetcode.editor.cn;
+
+import java.util.Map;
+import java.util.TreeMap;
+
 //java:原子的数量
-public class P726NumberOfAtoms{
+public class P726NumberOfAtoms {
     public static void main(String[] args) {
         Solution solution = new P726NumberOfAtoms().new Solution();
+        solution.countOfAtoms("Mg(OH)2");
     }
+
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String countOfAtoms(String formula) {
-        return null;
+    class Solution {
+        int i = 0;
+
+        public String countOfAtoms(String formula) {
+            i = 0;
+            StringBuilder ans = new StringBuilder();
+            Map<String, Integer> count = parse(formula);
+            for (String name : count.keySet()) {
+                ans.append(name);
+                int multiplicity = count.get(name);
+                if (multiplicity > 1) {
+                    ans.append("" + multiplicity);
+                }
+            }
+            return ans.toString();
+        }
+
+        public Map<String, Integer> parse(String formula) {
+            int N = formula.length();
+            Map<String, Integer> count = new TreeMap<>();
+            while (i < N && formula.charAt(i) != ')'){
+                if(formula.charAt(i) == '('){
+                    i++;
+                    for(Map.Entry<String, Integer> entry : parse(formula).entrySet()){
+                        count.put(entry.getKey(), count.getOrDefault(entry.getKey(), 0) + entry.getValue());
+                    }
+                } else {
+                    int istart = i++;
+                    while(i < N && Character.isLowerCase(formula.charAt(i))){
+                        i ++;
+                    }
+                    String name = formula.substring(istart, i);
+                    istart  = i;
+                    while(i < N && Character.isDigit(formula.charAt(i))){
+                        i ++;
+                    }
+                    int multiplicity = istart < i ? Integer.parseInt(formula.substring(istart, i)) : 1;
+                    count.put(name, count.getOrDefault(name, 0) + multiplicity);
+                }
+            }
+            int istart = ++i;
+            while(i < N && Character.isDigit(formula.charAt(i))){
+                i++;
+            }
+            if(istart < i){
+                int multiplicity = Integer.parseInt(formula.substring(istart, i));
+                for(String key : count.keySet()){
+                    count.put(key, count.get(key) * multiplicity);
+                }
+            }
+
+            return count;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
