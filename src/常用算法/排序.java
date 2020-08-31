@@ -102,7 +102,11 @@ public class 排序 {
     // 1. 初始化大顶堆 2.将堆顶元素与堆尾元素交换 3.重新构建堆 4 重复
     public static void heapSort(int[] nums){
         //初始化大顶堆
-        heapify(nums);
+        for (int i = (nums.length - 1) / 2; i >= 0; i--) {
+            //从第一个非叶子结点从下至上，从右至左调整结构
+            rebuildHeap(nums, i, nums.length-1);
+        }
+//        heapify(nums);
         for (int i = nums.length-1; i >= 1; i--) {
             // 弹出最大堆的堆顶放在最后
             swap(nums, 0, i);
