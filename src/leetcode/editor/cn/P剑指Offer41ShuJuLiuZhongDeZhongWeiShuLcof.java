@@ -50,7 +50,7 @@ import java.util.Queue;
 // java: 数据流中的中位数
 public class P剑指Offer41ShuJuLiuZhongDeZhongWeiShuLcof {
     public static void main(String[] args) {
-        Solution solution = new P剑指Offer41ShuJuLiuZhongDeZhongWeiShuLcof().new Solution();
+        // Solution solution = new P剑指Offer41ShuJuLiuZhongDeZhongWeiShuLcof().new Solution();
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)

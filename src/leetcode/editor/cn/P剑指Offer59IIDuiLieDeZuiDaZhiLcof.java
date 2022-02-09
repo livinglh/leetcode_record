@@ -39,7 +39,7 @@ import java.util.Queue;
 // java: 队列的最大值
 public class P剑指Offer59IIDuiLieDeZuiDaZhiLcof {
     public static void main(String[] args) {
-        Solution solution = new P剑指Offer59IIDuiLieDeZuiDaZhiLcof().new Solution();
+        // Solution solution = new P剑指Offer59IIDuiLieDeZuiDaZhiLcof().new Solution();
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)

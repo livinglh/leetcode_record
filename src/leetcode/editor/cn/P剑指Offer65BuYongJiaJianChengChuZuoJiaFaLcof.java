@@ -32,6 +32,7 @@ class Solution {
             a ^= b; // a = 非进位和
             b = c; // b = 进位
         }
+        return b;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -29,12 +29,6 @@
   
 package leetcode.editor.cn;
 
-import com.sun.scenario.animation.shared.ClipEnvelope;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 //java:有序数组的平方
 public class P977SquaresOfASortedArray{
     public static void main(String[] args) {

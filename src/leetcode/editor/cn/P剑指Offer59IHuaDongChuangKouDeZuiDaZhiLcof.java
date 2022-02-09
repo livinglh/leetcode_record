@@ -30,8 +30,6 @@ package leetcode.editor.cn;
 import java.util.Deque;
 import java.util.LinkedList;
 
-import com.sun.jdi.connect.spi.TransportService.ListenKey;
-
 // java: 滑动窗口的最大值
 public class P剑指Offer59IHuaDongChuangKouDeZuiDaZhiLcof {
     public static void main(String[] args) {

@@ -1,7 +1,5 @@
 package 笔试题.阿里7_29;
 
-import com.sun.scenario.animation.shared.ClipEnvelope;
-
 import java.util.Scanner;
 
 /*
