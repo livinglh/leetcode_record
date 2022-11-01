@@ -48,6 +48,7 @@ public class P剑指Offer38ZiFuChuanDePaiLieLcof {
         public void reback(String s, String cur) {
             if (s.length() == cur.length()) {
                 ans.add(cur);
+                return;
             }
             for (int i = 0; i < s.length(); i++) {
                 if (visited[i]) {

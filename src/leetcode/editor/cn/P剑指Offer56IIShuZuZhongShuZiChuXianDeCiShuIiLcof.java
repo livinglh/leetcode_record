@@ -40,7 +40,7 @@ public class P剑指Offer56IIShuZuZhongShuZiChuXianDeCiShuIiLcof {
             int[] counts = new int[32];
             for (int num : nums) {
                 for (int i = 0; i < 32; i++) {
-                    counts[i] += 1;
+                    counts[i] += num & 1;
                     num >>>= 1;
                 }
             }

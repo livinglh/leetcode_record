@@ -28,14 +28,14 @@
 // 
 // Related Topics 设计
 
-  
+
 package leetcode.editor.cn;
 
 import java.util.HashMap;
 import java.util.Map;
 
 //java:LRU缓存机制
-public class P146LruCache{
+public class P146LruCache {
     public static void main(String[] args) {
         //Solution solution = new P146LruCache().new Solution();
     }
@@ -60,7 +60,7 @@ public class P146LruCache{
             head.next = node;
         }
 
-        private void removeNode(DLinkedNode node){
+        private void removeNode(DLinkedNode node) {
             /**
              * Remove an existing node from the linked list.
              */
@@ -71,7 +71,7 @@ public class P146LruCache{
             next.prev = prev;
         }
 
-        private void moveToHead(DLinkedNode node){
+        private void moveToHead(DLinkedNode node) {
             /**
              * Move certain node in between to the head.
              */
@@ -121,7 +121,7 @@ public class P146LruCache{
         public void put(int key, int value) {
             DLinkedNode node = cache.get(key);
 
-            if(node == null) {
+            if (node == null) {
                 DLinkedNode newNode = new DLinkedNode();
                 newNode.key = key;
                 newNode.value = value;
@@ -131,7 +131,7 @@ public class P146LruCache{
 
                 ++size;
 
-                if(size > capacity) {
+                if (size > capacity) {
                     // pop the tail
                     DLinkedNode tail = popTail();
                     cache.remove(tail.key);
@@ -144,12 +144,97 @@ public class P146LruCache{
             }
         }
     }
-/**
- * Your LRUCache object will be instantiated and called as such:
- * LRUCache obj = new LRUCache(capacity);
- * int param_1 = obj.get(key);
- * obj.put(key,value);
- */
+
+    /**
+     * Your LRUCache object will be instantiated and called as such:
+     * LRUCache obj = new LRUCache(capacity);
+     * int param_1 = obj.get(key);
+     * obj.put(key,value);
+     */
 //leetcode submit region end(Prohibit modification and deletion)
 
+
+    public class LRUCache2 {
+        class DNode {
+            int key;
+            int value;
+            DNode pre;
+            DNode next;
+
+            public DNode() {
+            }
+
+            ;
+
+            public DNode(int _key, int _value) {
+                key = _key;
+                value = _value;
+            }
+        }
+
+        DNode head, tail;
+        int size;
+        int capacity;
+        Map<Integer, DNode> cache;
+
+        public LRUCache2(int capacity) {
+            head = new DNode();
+            tail = new DNode();
+            this.capacity = capacity;
+            cache = new HashMap<>();
+            head.next = tail;
+            tail.pre = head;
+        }
+
+        public int get(int key) {
+            DNode node = cache.get(key);
+            if (node == null) {
+                return -1;
+            }
+            moveToHead(node);
+            return node.value;
+        }
+
+        public void put(int key, int value) {
+            if (cache.containsKey(key)) {
+                DNode node = cache.get(key);
+                moveToHead(node);
+            } else {
+                DNode node = new DNode(key, value);
+                cache.put(key, node);
+                addNode(node);
+                size++;
+                if (size > capacity) {
+                    DNode tail = removeNode();
+                    cache.remove(tail.key);
+                    size--;
+                }
+
+            }
+        }
+
+        private DNode removeNode() {
+            DNode node = tail.pre;
+            removeNode(node);
+            return node;
+        }
+
+        private void moveToHead(DNode node) {
+            removeNode(node);
+            addNode(node);
+        }
+
+        private void removeNode(DNode node) {
+            node.pre.next = node.next;
+            node.next.pre = node.pre;
+        }
+
+        private void addNode(DNode node) {
+            node.pre = head;
+            node.next = head.next;
+            head.next.pre = node;
+            head.next = node;
+        }
+
+    }
 }

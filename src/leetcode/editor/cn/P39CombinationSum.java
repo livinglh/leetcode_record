@@ -49,22 +49,23 @@ class Solution {
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         Arrays.sort(candidates);
-        LinkedList<Integer> path = new LinkedList<>();
-        DFS(candidates, 0,target,path);
+        List<Integer> path = new ArrayList<>();
+        DFS(candidates, target, 0, path);
         return ans;
     }
-    public void DFS(int[] candidates, int start, int target, LinkedList<Integer> path){
-        if(target == 0){
-            ans.add(new LinkedList<>(path));
-            // 注意这里的添加操作不能用ans.add(path);
-            // 由于 path 全局只使用一份，到叶子结点的时候需要做一个拷贝
+    public void DFS(int[] candidates, int target, int begin, List<Integer> path){
+        if (target < 0) {
             return;
         }
-        for (int i = start; i < candidates.length; i++) {
-            if(candidates[i] > target) break;
-            path.offer(candidates[i]);
-            DFS(candidates, i, target - candidates[i], path);
-            path.removeLast();
+        if (target == 0) {
+            ans.add(new ArrayList<>(path));
+            return;
+        }
+        for (int i = begin; i < candidates.length; i++) {
+            if (candidates[i] > target) break;
+            path.add(candidates[i]);
+            DFS(candidates, target - candidates[i], i, path);
+            path.remove(path.size() - 1);
         }
         return;
     }
